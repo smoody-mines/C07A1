@@ -8,8 +8,8 @@ import gameEngine.Moveable;
 public class LevelSetup {
 	private int playerStartLoc = 7;
 	
-	private ArrayList<Moveable> movingPieces;
-	private ArrayList<GamePiece> interactingPieces;
+	private ArrayList<Moveable> movingPieces = new ArrayList<Moveable>();
+	private ArrayList<GamePiece> interactingPieces = new ArrayList<GamePiece>();
 	private Drawable[] board;
 	
 	public void createLevel(int levelNum){
@@ -26,12 +26,20 @@ public class LevelSetup {
 	
 	private void level1(){
 		board = new Drawable[21];
-		board[0] = new Sitter(0);
+		insert_sitter(3);
 	}
 	
 	private void level2(){
 		board = new Drawable[21];
-		board[0] = new Sitter(6);
+		insert_sitter(6);
+		
+		
+	}
+	
+	private void insert_sitter(int position) {
+		Sitter newPiece = new Sitter(position);
+		board[position] = newPiece;
+		interactingPieces.add(newPiece);
 	}
 
 	public int getPlayerStartLoc() {

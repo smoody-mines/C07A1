@@ -12,7 +12,14 @@ public class Sitter extends GamePiece implements Drawable {
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
-		return InteractionResult.ADVANCE;
+		if (playerLocation == this.getLocation()) {
+			return InteractionResult.ADVANCE;
+		}
+		else {
+			return InteractionResult.NONE;
+		}
+		
 	}
+	
 
 }
