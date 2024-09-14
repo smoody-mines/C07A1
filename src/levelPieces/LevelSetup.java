@@ -10,7 +10,7 @@ public class LevelSetup {
 	
 	private ArrayList<Moveable> movingPieces = new ArrayList<Moveable>();
 	private ArrayList<GamePiece> interactingPieces = new ArrayList<GamePiece>();
-	private Drawable[] board;
+	Drawable[] board = new Drawable[21];
 	
 	public void createLevel(int levelNum){
 		
@@ -25,16 +25,16 @@ public class LevelSetup {
 	}
 	
 	private void level1(){
-		board = new Drawable[21];
 		insertSitter(3);
 		insertSpike(1);
 	}
 	
 	private void level2(){
-		board = new Drawable[21];
+		
 		insertSitter(1);
 		insertSpike(4);
 		insertSpike(10);
+		insertCop(11);
 		
 		
 	}
@@ -49,6 +49,13 @@ public class LevelSetup {
 		Spike newPiece = new Spike(position); 
 		board[position] = newPiece;
 		interactingPieces.add(newPiece);
+	}
+	
+	private void insertCop(int position) {
+		Cop newPiece = new Cop(position); 
+		board[position] = newPiece;
+		interactingPieces.add(newPiece);
+		movingPieces.add(newPiece);
 	}
 	
 	public int getPlayerStartLoc() {

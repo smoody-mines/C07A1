@@ -12,7 +12,7 @@ public class Spike extends GamePiece implements Drawable {
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
 		if (playerLocation == this.getLocation()) {
-			return InteractionResult.ADVANCE;
+			return InteractionResult.KILL;
 		}
 		else {
 			return InteractionResult.NONE;
