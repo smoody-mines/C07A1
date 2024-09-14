@@ -26,24 +26,31 @@ public class LevelSetup {
 	
 	private void level1(){
 		board = new Drawable[21];
-		insertPiece('S', 3);
+		insertSitter(3);
+		insertSpike(1);
 	}
 	
 	private void level2(){
 		board = new Drawable[21];
-		insertPiece('S', 6);
+		insertSitter(1);
+		insertSpike(4);
+		insertSpike(10);
 		
 		
 	}
 	
-	private void insertPiece(char type, int position) {
-		GamePiece newPiece;
-		if(type == 'S') {newPiece = new Sitter(position); }
-		else return;
+	private void insertSitter(int position) {
+		Sitter newPiece = new Sitter(position); 
 		board[position] = newPiece;
 		interactingPieces.add(newPiece);
 	}
-
+	
+	private void insertSpike(int position) {
+		Spike newPiece = new Spike(position); 
+		board[position] = newPiece;
+		interactingPieces.add(newPiece);
+	}
+	
 	public int getPlayerStartLoc() {
 		return playerStartLoc;
 	}
