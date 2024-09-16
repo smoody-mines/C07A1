@@ -12,7 +12,7 @@ public class LevelSetup {
 	private ArrayList<GamePiece> interactingPieces = new ArrayList<GamePiece>();
 	Drawable[] board = new Drawable[21];
 	
-	public void createLevel(int levelNum){
+	public void createLevel(int levelNum){ //create initial levels. Calls appropriate level method
 		
 		if (levelNum == 1) {level1();}
 		
@@ -24,12 +24,12 @@ public class LevelSetup {
 	
 	}
 	
-	private void level1(){
+	private void level1(){ //place a number of gamePieces on the board for level 1
 		insertSitter(3);
 		insertSpike(1);
 	}
 	
-	private void level2(){
+	private void level2(){ //place a number of gamePieces on the board for  level 2
 		
 		insertSitter(1);
 		insertSpike(4);
@@ -38,6 +38,11 @@ public class LevelSetup {
 		
 		
 	}
+	
+	/*
+	 * The following insert___ functions will place one of the according game pieces at the index given.
+	 * They will also add new pieces to interactingPieces or movingPieces when appropriate.
+	 */
 	
 	private void insertSitter(int position) {
 		Sitter newPiece = new Sitter(position); 
