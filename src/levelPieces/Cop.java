@@ -12,7 +12,9 @@ public class Cop extends GamePiece implements Drawable, Moveable {
 	}
 	
 	@Override
-	public void move(Drawable[] gameBoard, int playerLocation) {
+	// The cop tries to chase down the player by moving in towards the player to the next open space.
+	
+	public void move(Drawable[] gameBoard, int playerLocation) { 
 		
 		// TODO Auto-generated method stub
 		int step = 0;
@@ -25,7 +27,7 @@ public class Cop extends GamePiece implements Drawable, Moveable {
 				}
 			}
 		}
-		else {
+		else if(playerLocation < this.getLocation()) {
 			while(gameBoard[this.getLocation() + step] != null) {
 				step -= 1;
 				if(this.getLocation() + step < 0) {
@@ -34,16 +36,16 @@ public class Cop extends GamePiece implements Drawable, Moveable {
 				}
 			}
 		}
-		this.setLocation(this.getLocation() + step);
+		
 		gameBoard[this.getLocation()] = null;
 		gameBoard[this.getLocation() + step] = this;
+		this.setLocation(this.getLocation() + step);
 		
 	}
 
+	//If the cop ever arrives at the same position at the player, the player looses. 
 	@Override
-	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) { 
 				if (playerLocation == this.getLocation()) {
 					return InteractionResult.KILL;
 				}
