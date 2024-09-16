@@ -8,7 +8,7 @@ public class Sitter extends GamePiece implements Drawable {
 	public Sitter(int location) {
 		super('S', "Sitter", location);
 	}
-
+	// first class object made for testing. Currently advances to the next level.
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
