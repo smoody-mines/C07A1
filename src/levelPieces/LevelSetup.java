@@ -31,8 +31,8 @@ public class LevelSetup {
 		insertPuppy(3);
 		insertSpike(1);
 		insertCoin(4);
-		insertFlower(5);
-		insertFlower(6);
+		insertBodybuilder(5);
+		insertBodybuilder(6);
 		insertCoin(8);
 		insertWizard(17);
 	}
@@ -63,8 +63,8 @@ public class LevelSetup {
 		interactingPieces.add(newPiece);
 	}
 	
-	private void insertFlower(int position) {
-		Flower newPiece = new Flower(position); 
+	private void insertBodybuilder(int position) {
+		Bodybuilder newPiece = new Bodybuilder(position); 
 		board[position] = newPiece;
 		interactingPieces.add(newPiece);
 	}
