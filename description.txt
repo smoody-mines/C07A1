@@ -1,0 +1,23 @@
+Authors: James Slopey & Sean Moody
+
+Classes:
+
+
+
+-Coin (GET_POINT):
+Will grant a point when collected. Can only be collected once.
+
+-Puppy (ADVANCE):
+Pet (go to square next to) the puppy to advance to the next level;
+
+-Spike (HIT):
+Will hit the player if stepped on. Remain if stepped on.
+
+-Wizard (HIT, Ranged):
+Will hit the player if they step within range (2 spaces)
+
+-Bodybuilder (NONE, Ranged):
+The bodybuilder will start flexing (change symbols) if they notice anyone nearby (3 squares) he is otherwise harmless
+
+-Cop (KILL, Moveable):
+Will always chase in the direction of the player. Will kill the player if the player runs into them
