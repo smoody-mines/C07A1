@@ -12,13 +12,14 @@ public class Cop extends GamePiece implements Drawable, Moveable {
 	}
 	
 	@Override
-	// The cop tries to chase down the player by moving in towards the player to the next open space.
+	// The cop tries to chase down the player by moving in towards the player to the next open space, but will not move if directly next to the player.
+	// note: last step is just to avoid the player landing on top of the cop without an interaction due to the order of processes in the gameEngine
 	
 	public void move(Drawable[] gameBoard, int playerLocation) { 
 		
 		// TODO Auto-generated method stub
 		int step = 0;
-		if(playerLocation > this.getLocation()) {
+		if(playerLocation > this.getLocation() + 1) {
 			while(gameBoard[this.getLocation() + step] != null) {
 				step += 1;
 				if(this.getLocation() + step > 21) {
@@ -27,7 +28,7 @@ public class Cop extends GamePiece implements Drawable, Moveable {
 				}
 			}
 		}
-		else if(playerLocation < this.getLocation()) {
+		else if(playerLocation < this.getLocation() - 1) {
 			while(gameBoard[this.getLocation() + step] != null) {
 				step -= 1;
 				if(this.getLocation() + step < 0) {
@@ -43,7 +44,7 @@ public class Cop extends GamePiece implements Drawable, Moveable {
 		
 	}
 
-	//If the cop ever arrives at the same position at the player, the player looses. 
+	//If the player lands on the cop, the player loses
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) { 
 				if (playerLocation == this.getLocation()) {
