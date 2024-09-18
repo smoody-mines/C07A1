@@ -25,13 +25,14 @@ public class LevelSetup {
 	}
 	
 	private void level1(){ //place a number of gamePieces on the board for level 1
-		insertSitter(3);
+		insertPuppy(3);
 		insertSpike(1);
+		insertWizard(17);
 	}
 	
 	private void level2(){ //place a number of gamePieces on the board for  level 2
 		
-		insertSitter(1);
+		insertPuppy(1);
 		insertSpike(4);
 		insertSpike(10);
 		insertCop(11);
@@ -44,14 +45,20 @@ public class LevelSetup {
 	 * They will also add new pieces to interactingPieces or movingPieces when appropriate.
 	 */
 	
-	private void insertSitter(int position) {
-		Sitter newPiece = new Sitter(position); 
+	private void insertPuppy(int position) {
+		Puppy newPiece = new Puppy(position); 
 		board[position] = newPiece;
 		interactingPieces.add(newPiece);
 	}
 	
 	private void insertSpike(int position) {
 		Spike newPiece = new Spike(position); 
+		board[position] = newPiece;
+		interactingPieces.add(newPiece);
+	}
+	
+	private void insertWizard(int position) {
+		Wizard newPiece = new Wizard(position); 
 		board[position] = newPiece;
 		interactingPieces.add(newPiece);
 	}

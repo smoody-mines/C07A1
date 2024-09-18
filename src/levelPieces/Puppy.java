@@ -3,16 +3,17 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
-public class Sitter extends GamePiece implements Drawable {
+public class Puppy extends GamePiece implements Drawable {
 	
-	public Sitter(int location) {
-		super('S', "Sitter", location);
+	public Puppy(int location) {
+		super('p', "Puppy", location);
 	}
-	// first class object made for testing. Currently advances to the next level.
+	// Pet the puppy to advance levels.
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
 		if (playerLocation == this.getLocation()) {
+			System.out.println("*Pat* *Pat*");
 			return InteractionResult.ADVANCE;
 		}
 		else {
