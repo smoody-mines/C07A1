@@ -8,11 +8,14 @@ import gameEngine.Moveable;
 public class LevelSetup {
 	private int playerStartLoc = 7;
 	
-	private ArrayList<Moveable> movingPieces = new ArrayList<Moveable>();
-	private ArrayList<GamePiece> interactingPieces = new ArrayList<GamePiece>();
-	Drawable[] board = new Drawable[21];
+	private ArrayList<Moveable> movingPieces;
+	private ArrayList<GamePiece> interactingPieces;
+	Drawable[] board;
 	
 	public void createLevel(int levelNum){ //create initial levels. Calls appropriate level method
+		board = new Drawable[21];
+		interactingPieces = new ArrayList<GamePiece>();
+		movingPieces = new ArrayList<Moveable>();
 		
 		if (levelNum == 1) {level1();}
 		
@@ -27,11 +30,12 @@ public class LevelSetup {
 	private void level1(){ //place a number of gamePieces on the board for level 1
 		insertPuppy(3);
 		insertSpike(1);
+		insertCoin(4);
+		insertCoin(8);
 		insertWizard(17);
 	}
 	
 	private void level2(){ //place a number of gamePieces on the board for  level 2
-		
 		insertPuppy(1);
 		insertSpike(4);
 		insertSpike(10);
@@ -47,6 +51,12 @@ public class LevelSetup {
 	
 	private void insertPuppy(int position) {
 		Puppy newPiece = new Puppy(position); 
+		board[position] = newPiece;
+		interactingPieces.add(newPiece);
+	}
+	
+	private void insertCoin(int position) {
+		Coin newPiece = new Coin(position); 
 		board[position] = newPiece;
 		interactingPieces.add(newPiece);
 	}

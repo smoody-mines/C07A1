@@ -8,7 +8,7 @@ public class Puppy extends GamePiece implements Drawable {
 	public Puppy(int location) {
 		super('p', "Puppy", location);
 	}
-	// Pet the puppy to advance levels.
+	// Pet the puppy (step on same square) to advance levels.
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
