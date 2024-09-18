@@ -31,6 +31,8 @@ public class LevelSetup {
 		insertPuppy(3);
 		insertSpike(1);
 		insertCoin(4);
+		insertFlower(5);
+		insertFlower(6);
 		insertCoin(8);
 		insertWizard(17);
 	}
@@ -61,6 +63,11 @@ public class LevelSetup {
 		interactingPieces.add(newPiece);
 	}
 	
+	private void insertFlower(int position) {
+		Flower newPiece = new Flower(position); 
+		board[position] = newPiece;
+		interactingPieces.add(newPiece);
+	}
 	private void insertSpike(int position) {
 		Spike newPiece = new Spike(position); 
 		board[position] = newPiece;

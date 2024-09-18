@@ -7,7 +7,7 @@ public class Flower extends GamePiece implements Drawable {
 	public Flower(int location) {
 		super('F', "Flower", location);
 	}
-	private boolean crushed;
+	private boolean crushed = false;
 	// The flower will not do anything except crumble (change symbols) if stepped on.
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
