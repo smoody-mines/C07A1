@@ -13,7 +13,6 @@ public class Puppy extends GamePiece implements Drawable {
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
 		if (playerLocation == this.getLocation()) {
-			System.out.println("*Pat* *Pat*");
 			return InteractionResult.ADVANCE;
 		}
 		else {
