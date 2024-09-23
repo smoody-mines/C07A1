@@ -52,6 +52,6 @@ class TestInteractions {
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
 		Puppy puppy = new Puppy(4);
 		gameBoard[4] = puppy;
-		assertEquals(InteractionResult.GET_POINT, puppy.interact(gameBoard, 4));
+		assertEquals(InteractionResult.ADVANCE, puppy.interact(gameBoard, 4));
 	}
 }
