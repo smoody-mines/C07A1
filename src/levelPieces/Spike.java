@@ -18,7 +18,5 @@ public class Spike extends GamePiece implements Drawable {
 		else {
 			return InteractionResult.NONE;
 		}
-		
 	}
-
 }

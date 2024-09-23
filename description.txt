@@ -2,7 +2,11 @@ Authors: James Slopey & Sean Moody
 
 Classes:
 
+-Bonus (GET_POINT)
+grants a point, but moves away from player at all times
 
+-Decoration
+is not a game piece, just sits there, does not interact or move. only drawable
 
 -Coin (GET_POINT):
 Will grant a point when collected. Can only be collected once.

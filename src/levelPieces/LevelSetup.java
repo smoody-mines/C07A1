@@ -35,6 +35,8 @@ public class LevelSetup {
 		insertBodybuilder(6);
 		insertCoin(8);
 		insertWizard(17);
+		insertDecoration(2);
+		insertBonus(15);
 	}
 	
 	private void level2(){ //place a number of gamePieces on the board for  level 2
@@ -42,14 +44,22 @@ public class LevelSetup {
 		insertSpike(4);
 		insertSpike(10);
 		insertCop(11);
-		
-		
 	}
 	
 	/*
 	 * The following insert___ functions will place one of the according game pieces at the index given.
 	 * They will also add new pieces to interactingPieces or movingPieces when appropriate.
 	 */
+	
+	private void insertBonus(int position) {
+		Bonus newPiece = new Bonus(position);
+		board[position] = newPiece;
+	}
+	
+	private void insertDecoration(int position) {
+		Decoration newPiece = new Decoration(position);
+		board[position] = newPiece;
+	}
 	
 	private void insertPuppy(int position) {
 		Puppy newPiece = new Puppy(position); 
